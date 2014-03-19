@@ -5,6 +5,8 @@ Your task is to debug the code and achieve the same functionality as in the exam
 
 Watch the video example (link below), clone this repo, and manage to make up the same app using this code.
 
+When you're done, fork this repo, commit your code and make a pull request to this repo.
+
 Required skills:
 - AngularJS
 - Underscore (a bit)
