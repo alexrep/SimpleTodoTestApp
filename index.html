@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Simle Todo App</title>
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+	<script src="http://underscorejs.org/underscore-min.js"></script>
+	<script src="app.js"></script>
+	<style>
+		tr.done {
+			text-decoration: line-through;
+			color: #cbcbcb;
+		}
+		td:last-child, th:last-child {
+			width: 200px;
+		}
+	</style>
+</head>
+<body ng-controller="TodoCtrl">
+	<div class="container">
+		<h1>My Todo App</h1>
+		<hr>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>New Todo:</th>
+					<th>
+						<input type="text" class="form-control" ng-model="newTodo" placeholder="What to do?">
+					</th>
+					<th>
+						<button class="btn btn-default" ng-click="addTodo()">Add</button>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="todo in todos">
+					<td>{{ $index }}</td>
+					<td>{{ todo.desc }}</td>
+					<td>
+						<button class="btn btn-default" ng-click="do($index)">Done</button>
+						<button class="btn btn-default" ng-click="delete($index)">Delete</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
