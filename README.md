@@ -3,6 +3,8 @@ Simple Todo App Test
 
 Your task is to debug the code and achieve the same functionality as in the example
 
+Watch the video example (link below), clone this repo, and manage to make up the same app using this code.
+
 Required skills:
 - AngularJS
 - Underscore (a bit)
