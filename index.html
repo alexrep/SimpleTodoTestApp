@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app='Todo'>
 <head>
 	<meta charset="UTF-8">
 	<title>Simle Todo App</title>
@@ -15,6 +15,37 @@
 		td:last-child, th:last-child {
 			width: 200px;
 		}
+
+span.toltip {
+      position: absolute;
+      top :-5;
+      width: 80px;
+      height: 30px;
+      line-height: 20px;
+      padding: 5px;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 9px;
+      
+      background-color: #F3F3F9;
+  
+      border-radius: 5px;
+      text-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 1px;
+      box-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 2px 0px;
+}
+
+span.toltip:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-width: 10px;
+      border-style: solid;
+      border-color: transparent transparent #F3F3F9 transparent;
+      top: -20px;
+      left: 20px;
+}
+
 	</style>
 </head>
 <body ng-controller="TodoCtrl">
@@ -26,19 +57,21 @@
 				<tr>
 					<th>New Todo:</th>
 					<th>
-						<input type="text" class="form-control" ng-model="newTodo" placeholder="What to do?">
+						<input type="text" class="form-control" ng-model="newTodo" ng-keypress="checkKey($event)"  ng-focus="removeTooltip()" placeholder="What to do?">
+						<span class ='toltip'	ng-show="isEmpty"> Empty</span>
 					</th>
 					<th>
 						<button class="btn btn-default" ng-click="addTodo()">Add</button>
+						<button class="btn btn-default" ng-click="removeDone()">Remove</button>
 					</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="todo in todos">
+				<tr ng-repeat="todo in todos"   ng-class= "{done:todo.done}" ;>
 					<td>{{ $index }}</td>
 					<td>{{ todo.desc }}</td>
 					<td>
-						<button class="btn btn-default" ng-click="do($index)">Done</button>
+						<button class="btn btn-default  " ng-click="do($index)">{{todo.done?"Undone":"Done"}}</button>
 						<button class="btn btn-default" ng-click="delete($index)">Delete</button>
 					</td>
 				</tr>
