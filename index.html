@@ -16,39 +16,38 @@
 			width: 200px;
 		}
 
-span.toltip {
-      position: absolute;
-      top :-5;
-      width: 80px;
-      height: 30px;
-      line-height: 20px;
-      padding: 5px;
-      font-size: 14px;
-      text-align: center;
-      margin-top: 9px;
+		span.toltip {
+      		position: absolute;
+      		top :-5;
+      		width: 80px;
+      		height: 30px;
+      		line-height: 20px;
+      		padding: 5px;
+      		font-size: 14px;
+      		text-align: center;
+      		margin-top: 9px;
       
-      background-color: #F3F3F9;
+      		background-color: #F3F3F9;
   
-      border-radius: 5px;
-      text-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 1px;
-      box-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 2px 0px;
-}
+      		border-radius: 5px;
+      		
+		}
 
-span.toltip:after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-width: 10px;
-      border-style: solid;
-      border-color: transparent transparent #F3F3F9 transparent;
-      top: -20px;
-      left: 20px;
-}
+		span.toltip:after {
+      		content: "";
+      		position: absolute;
+      		width: 0;
+      		height: 0;
+      		border-width: 10px;
+      		border-style: solid;
+      		border-color: transparent transparent #F3F3F9 transparent;
+      		top: -20px;
+      		left: 20px;
+		}
 
 	</style>
 </head>
-<body ng-controller="TodoCtrl">
+<body ng-controller="TodoCtrl"> 
 	<div class="container">
 		<h1>My Todo App</h1>
 		<hr>

@@ -2,7 +2,7 @@
 
 var TodoApp = angular.module('Todo', []);
 
-TodoApp.controller('TodoCtrl', function($scope) {
+TodoApp.controller('TodoCtrl', function($scope,$timeout) {
 	
 	$scope.todos = [{
 			"desc": "test",
@@ -20,7 +20,7 @@ TodoApp.controller('TodoCtrl', function($scope) {
 			$scope.addTodo();
 		}else{
 
-			if ($scope.isEmpty)	$scope.removeTooltip();
+				$scope.removeTooltip();
 		}
 	}	
 
@@ -36,7 +36,9 @@ TodoApp.controller('TodoCtrl', function($scope) {
 
 		}else{
 			$scope.isEmpty =true;
-			setTimeout($scope.removeTooltip,500);
+			$timeout($scope.removeTooltip,4000);
+
+			
 
 		}
 
@@ -44,8 +46,9 @@ TodoApp.controller('TodoCtrl', function($scope) {
 	}
 
 	$scope.removeTooltip = function(){
-				$scope.isEmpty =false;
-				console.log("remove");	
+				if ($scope.isEmpty) $scope.isEmpty =false;
+
+				console.log("remove",$scope);	
 			}
 
 
