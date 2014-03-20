@@ -46,10 +46,8 @@ TodoApp.controller('TodoCtrl', function($scope,$timeout) {
 	}
 
 	$scope.removeTooltip = function(){
-				if ($scope.isEmpty) $scope.isEmpty =false;
-
-				console.log("remove",$scope);	
-			}
+			if ($scope.isEmpty) $scope.isEmpty =false;
+		}
 
 
 	$scope.removeDone=function(){
